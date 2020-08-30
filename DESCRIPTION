@@ -7,9 +7,11 @@ Authors@R:
            role = c("aut", "cre"),
            email = "darlanminussi@gmail.com",
            comment = c(ORCID = "YOUR-ORCID-ID"))
-Description:R package for plotting quality of scRNA cells.
+Description: R package for plotting quality of scRNA cells.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
+Imports: 
+    ggplot2

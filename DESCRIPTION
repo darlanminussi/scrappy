@@ -1,6 +1,6 @@
 Package: scrappy
 Title: R package for plotting quality of scRNA cells.
-Version: 0.0.0.9000
+Version: 0.0.0.9001
 Authors@R: 
     person(given = "Darlan",
            family = "Conterno Minussi",

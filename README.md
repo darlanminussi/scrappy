@@ -15,7 +15,7 @@ single-cells.
 You can install the development version with:
 
 ``` r
-install.packages("devtools")
+# install.packages("remotes")
 remotes::install_github("darlanminussi/scrappy")
 ```
 

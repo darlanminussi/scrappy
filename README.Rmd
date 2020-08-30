@@ -28,7 +28,7 @@ scrappy provides an easy way to visualize the quality of scRNA single-cells.
 You can install the development version with:
 
 ``` r
-install.packages("devtools")
+# install.packages("remotes")
 remotes::install_github("darlanminussi/scrappy")
 ```
 

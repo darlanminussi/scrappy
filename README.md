@@ -22,7 +22,13 @@ remotes::install_github("darlanminussi/scrappy")
 scrappy uses the percentage of mitochondrial gene expression to classify
 the cells as:
 
-😄: Great Quality 🙂: Good quality 😣: OK quality 💩: Low quality
+😄: Great Quality
+
+🙂: Good quality
+
+😣: OK quality
+
+💩: Low quality
 
 scrappy offers wrappers for
 [SingleCellExperiment](https://osca.bioconductor.org/) as well as

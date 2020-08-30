@@ -35,8 +35,11 @@ remotes::install_github("darlanminussi/scrappy")
 scrappy uses the percentage of mitochondrial gene expression to classify the cells as:
 
 `r emo::ji("smile")`: Great Quality
+
 `r emo::ji("slightly_smiling_face")`: Good quality
+
 `r emo::ji("persevere")`: OK quality
+
 `r emo::ji("poop")`: Low quality
 
 scrappy offers wrappers for [SingleCellExperiment](https://osca.bioconductor.org/) as well as [Seurat](https://satijalab.org/seurat/) objects.
@@ -72,7 +75,7 @@ sce
 ```
 
 
-```{r example, fig.width=8, fig.height=8}
+```{r example, fig.width=6, fig.height=6}
 library(scrappy)
 plotScrappy(sce, "TSNE")
 ```

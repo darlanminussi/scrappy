@@ -18,7 +18,7 @@
 #' @importFrom SummarizedExperiment colData
 #' @importFrom SingleCellExperiment reducedDim
 #' @importFrom Seurat Embeddings
-#' @importFrom ggplot2 ggplot
+#' @importFrom ggplot2 ggplot aes theme_classic
 #' @importFrom ggimage geom_image
 #' @importFrom dplyr case_when
 scrappyPlot <- function(object,

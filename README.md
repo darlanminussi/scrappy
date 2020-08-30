@@ -30,9 +30,9 @@ the cells as:
 
 💩: Low quality.
 
-scrappy offers wrappers for
-[SingleCellExperiment](https://osca.bioconductor.org/) as well as
-[Seurat](https://satijalab.org/seurat/) objects.
+scrappy can be used on
+[SingleCellExperiment](https://osca.bioconductor.org/) objects as well
+as [Seurat](https://satijalab.org/seurat/) objects.
 
 ## Example
 
@@ -59,6 +59,6 @@ scrappyPlot(sce, "TSNE")
 
 <img src="man/figures/README-example-1.png" width="100%" />
 
-PS: If you want to learn about QC metrics and learn how to filter your
+PS: If you want to learn about QC metrics and how to filter your
 single-cell datasets follow this
 [link](https://osca.bioconductor.org/quality-control.html#choice-of-qc-metrics).

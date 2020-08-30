@@ -1,3 +1,5 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
 ^scrappy\.Rproj$
+^LICENSE\.md$
+^README\.Rmd$

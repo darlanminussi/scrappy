@@ -1,0 +1,84 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+
+library(emo)
+```
+
+# scrappy
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+scrappy provides an easy way to visualize low-quality single-cells.
+
+
+## Installation
+
+You can install the development version with:
+
+``` r
+install.packages("devtools")
+remotes::install_github("darlanminussi/scrappy")
+```
+
+scrappy uses the percentage of mitochondrial gene expression to classify the cells as:
+
+```{r, include = FALSE}
+
+paste0(emo::ji("smile"),": ", "Great quality")
+paste0(emo::ji("slightly_smiling_face"),": ", "Good quality")
+paste0(emo::ji("persevere"),": ", "OK quality")
+paste0(emo::ji("poop"),": ", "Low quality")
+
+```
+
+scrappy offers wrappers for [SingleCellExperiment](https://osca.bioconductor.org/) as well as [Seurat](https://satijalab.org/seurat/) objects.
+
+## Example
+
+```{r, include = FALSE}
+library(scRNAseq)
+sce <- ZeiselBrainData()
+
+# Quality control.
+library(scater)
+is.mito <- grepl("^mt-", rownames(sce))
+table(is.mito)
+sce <- addPerCellQC(sce, subsets=list(Mito=is.mito))
+plotColData(sce, x = NULL, y = "subsets_Mito_percent")
+
+# Normalization.
+sce <- logNormCounts(sce)
+
+# Feature selection.
+library(scran)
+dec <- modelGeneVar(sce)
+hvg <- getTopHVGs(dec, prop=0.1)
+
+# Dimensionality reduction.
+set.seed(1234)
+sce <- runPCA(sce, ncomponents=25, subset_row=hvg)
+sce <- runTSNE(sce, dimred = 'PCA', external_neighbors=TRUE)
+```
+
+```{r}
+sce
+```
+
+
+```{r example}
+library(scrappy)
+plotScrappy(sce, "TSNE")
+```
+

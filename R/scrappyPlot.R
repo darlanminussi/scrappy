@@ -61,10 +61,10 @@ scrappyPlot <- function(object,
                          "dim2")
 
   # classify into emojis
-  red_dim$emoji <- case_when(meta >= 0 & meta <= great_qual ~ "img/smile.png",
-                             meta > great_qual & meta <= good_qual ~ "img/slightly_smile.png",
-                             meta > good_qual & meta <= ok_qual ~ "img/nauseated.png",
-                             meta > ok_qual ~ "img/tpoop.png",)
+  red_dim$emoji <- case_when(meta >= 0 & meta <= great_qual ~ system.file("extdata", "nauseated.png", package = "scrappy"),
+                             meta > great_qual & meta <= good_qual ~ system.file("extdata", "nauseated.png", package = "scrappy"),
+                             meta > good_qual & meta <= ok_qual ~ system.file("extdata", "nauseated.png", package = "scrappy"),
+                             meta > ok_qual ~ system.file("extdata", "nauseated.png", package = "scrappy"))
 
   # plotting
   ggplot(red_dim, aes(x = dim1,

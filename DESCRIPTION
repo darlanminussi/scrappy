@@ -1,13 +1,13 @@
 Package: scrappy
-Title: What the Package Does (One Line, Title Case)
+Title: R package for plotting quality of scRNA cells.
 Version: 0.0.0.9000
 Authors@R: 
-    person(given = "First",
-           family = "Last",
+    person(given = "Darlan",
+           family = "Conterno Minussi",
            role = c("aut", "cre"),
-           email = "first.last@example.com",
+           email = "darlanminussi@gmail.com",
            comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
+Description:R package for plotting quality of scRNA cells.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true

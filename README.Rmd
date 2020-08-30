@@ -20,7 +20,7 @@ library(emo)
 <!-- badges: start -->
 <!-- badges: end -->
 
-scrappy provides an easy way to visualize low-quality single-cells.
+scrappy provides an easy way to visualize the quality of scRNA single-cells.
 
 
 ## Installation
@@ -34,14 +34,10 @@ remotes::install_github("darlanminussi/scrappy")
 
 scrappy uses the percentage of mitochondrial gene expression to classify the cells as:
 
-```{r, include = FALSE}
-
-paste0(emo::ji("smile"),": ", "Great quality")
-paste0(emo::ji("slightly_smiling_face"),": ", "Good quality")
-paste0(emo::ji("persevere"),": ", "OK quality")
-paste0(emo::ji("poop"),": ", "Low quality")
-
-```
+`r emo::ji("smile")`: Great Quality
+`r emo::ji("slightly_smiling_face")`: Good quality
+`r emo::ji("persevere")`: OK quality
+`r emo::ji("poop")`: Low quality
 
 scrappy offers wrappers for [SingleCellExperiment](https://osca.bioconductor.org/) as well as [Seurat](https://satijalab.org/seurat/) objects.
 
@@ -56,7 +52,6 @@ library(scater)
 is.mito <- grepl("^mt-", rownames(sce))
 table(is.mito)
 sce <- addPerCellQC(sce, subsets=list(Mito=is.mito))
-plotColData(sce, x = NULL, y = "subsets_Mito_percent")
 
 # Normalization.
 sce <- logNormCounts(sce)
@@ -77,7 +72,7 @@ sce
 ```
 
 
-```{r example}
+```{r example, fig.width=8, fig.height=8}
 library(scrappy)
 plotScrappy(sce, "TSNE")
 ```

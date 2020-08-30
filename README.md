@@ -7,7 +7,8 @@
 
 <!-- badges: end -->
 
-scrappy provides an easy way to visualize low-quality single-cells.
+scrappy provides an easy way to visualize the quality of scRNA
+single-cells.
 
 ## Installation
 
@@ -20,6 +21,8 @@ remotes::install_github("darlanminussi/scrappy")
 
 scrappy uses the percentage of mitochondrial gene expression to classify
 the cells as:
+
+😄: Great Quality 🙂: Good quality 😣: OK quality 💩: Low quality
 
 scrappy offers wrappers for
 [SingleCellExperiment](https://osca.bioconductor.org/) as well as

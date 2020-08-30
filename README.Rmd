@@ -34,13 +34,13 @@ remotes::install_github("darlanminussi/scrappy")
 
 scrappy uses the percentage of mitochondrial gene expression to classify the cells as:
 
-`r emo::ji("smile")`: Great Quality
+`r emo::ji("smile")`: Great Quality.
 
-`r emo::ji("slightly_smiling_face")`: Good quality
+`r emo::ji("slightly_smiling_face")`: Good quality.
 
-`r emo::ji("persevere")`: OK quality
+`r emo::ji("nauseated")`: OK quality.
 
-`r emo::ji("poop")`: Low quality
+`r emo::ji("poop")`: Low quality.
 
 scrappy offers wrappers for [SingleCellExperiment](https://osca.bioconductor.org/) as well as [Seurat](https://satijalab.org/seurat/) objects.
 
@@ -75,8 +75,9 @@ sce
 ```
 
 
-```{r example, fig.width=6, fig.height=6}
+```{r example, fig.width=6, fig.height=6, dpi = 300}
 library(scrappy)
-plotScrappy(sce, "TSNE")
+scrappyPlot(sce, "TSNE")
 ```
 
+PS: If you want to learn about QC metrics and learn how to filter your single-cell datasets follow this [link](https://osca.bioconductor.org/quality-control.html#choice-of-qc-metrics).

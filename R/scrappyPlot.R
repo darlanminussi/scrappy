@@ -1,11 +1,14 @@
 
 #' Make a scrappy plot
 #'
-#' @param object Single cell object. Scrappy recognizes SingleCellExperiment objects or Seurat objects
-#' @param great_qual Percentage of mitochondrial gene expression for a cell to be considered great quality (smaller than)
-#' @param good_qual Percentage of mitochondrial gene expression for a cell to be considered good quality (smaller than)
-#' @param ok_qual Percentage of mitochondrial gene expression for a cell to be considered ok quality (smaller than). Any other percentage above is considered poop quality
-#' @param dimred dimension reductions object to be accessed
+#' Scrappy plot uses the percentage of mitochondrial gene expression to plot the single-cell data as emojis
+#' corresponding to their quality score in a low dimensional reductions.
+#'
+#' @param object Single cell object. Scrappy recognizes \code{\link{SingleCellExperiment}} objects or \code{\link{Seurat}} objects
+#' @param great_qual Percentage of mitochondrial gene expression for a cell to be considered great quality (smaller than).
+#' @param good_qual Percentage of mitochondrial gene expression for a cell to be considered good quality (smaller than).
+#' @param ok_qual Percentage of mitochondrial gene expression for a cell to be considered ok quality (smaller than). Any other percentage above is considered poop quality.
+#' @param dimred dimension reductions object to be accessed.
 #'
 #' @return
 #' @export
@@ -18,7 +21,7 @@
 #' @importFrom ggplot2 ggplot
 #' @importFrom ggimage geom_image
 #' @importFrom dplyr case_when
-plotScrappy <- function(object,
+scrappyPlot <- function(object,
                         dimred,
                         great_qual = 5,
                         good_qual = 10,
@@ -60,7 +63,7 @@ plotScrappy <- function(object,
   # classify into emojis
   red_dim$emoji <- case_when(meta >= 0 & meta <= great_qual ~ "img/smile.png",
                              meta > great_qual & meta <= good_qual ~ "img/slightly_smile.png",
-                             meta > good_qual & meta <= ok_qual ~ "img/persevering.png",
+                             meta > good_qual & meta <= ok_qual ~ "img/nauseated.png",
                              meta > ok_qual ~ "img/tpoop.png",)
 
   # plotting
